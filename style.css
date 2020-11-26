@@ -1,0 +1,27 @@
+.admin_header{
+    background-color: rgba(82, 80, 80, 0.397);
+    padding: 7px;
+    border-left-style: solid;
+   
+
+}
+
+.footer{
+    background-color: rgb(201, 163, 236);
+    padding: 5px 3px;
+    text-align: right;
+    margin: 10px 0px;
+}
+
+p{
+    background-color: cadetblue;
+    width: 50vw;
+    text-align: center;
+}
+
+.mysection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
