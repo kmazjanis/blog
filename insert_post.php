@@ -13,8 +13,6 @@
 };
 
 ?>
-
-
           <h2>Insert POST</h2>
           <form action="includes/insert_post.inc.php" method="POST" class="mx-auto" style="width: 400px; margin-top: 20px">    
             <div class="form-group">

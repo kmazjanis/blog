@@ -7,35 +7,31 @@
       echo "<p class='alert alert-primary' role='alert'>Hello there " . $_SESSION["username"] . "</p>";
   }               
 ?>
-        
-<form action="insert_post.php" method="POST" class="mx-auto" style="width: 400px; margin-top: 20px">
-  <input name="author" type="hidden" class="form-control" value="1">
-    <div class="form-group">
-        <label for="formGroupExampleInput">Title</label>
-        <input name="title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput">SEO title</label>
-        <input name="seo_title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-      </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Category</label>
-      <select name="category" class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-    </div>
+            
+<title>Posts</title>
+<h3>Posts</h3>
+<?php
+  $conn = mysqli_connect("localhost", "root", "", "blogdb");
 
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Content</label>
-      <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
+  $sql = "SELECT * FROM post;";
+  $result = mysqli_query($conn, $sql);
+  $resultCheck = mysqli_num_rows($result);
 
-    <button type="submit" name="submit" class="btn btn-primary">SEND</button>
-  </form>
+  if($resultCheck > 0){
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo "<div class = article>";
+      echo $row['title'] . "<br>";
+      echo $row['content'] . "<br>";
+      echo "</div>";
+    }
+  }
+
+
+
+?>
+
+
+
 
 <?php
   include_once "footer.php";

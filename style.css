@@ -2,7 +2,6 @@
     background-color: rgba(82, 80, 80, 0.397);
     padding: 7px;
     border-left-style: solid;
-   
 
 }
 
@@ -25,3 +24,7 @@ p{
     width: 100%;
 }
 
+.article{
+    background-color: darkcyan;
+    margin: 10px;
+}
