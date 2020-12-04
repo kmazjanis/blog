@@ -17,11 +17,7 @@ session_start()
     <div>
 
     <?php
-        if(!isset($_SESSION["username"])){
-            echo "not loged in";
-        } else{
-            echo "all gut";
-        };
+        
     ?>
 
     </div>
@@ -38,6 +34,12 @@ session_start()
                     echo "<a href='signup.php'>Sign Up!</a>";
                     echo "<a href='login.php'> Login </a>";
                 }
+
+                if(!isset($_SESSION["username"])){
+                    echo 'not loged in';
+                } else{
+                    echo 'hi <b>', $_SESSION["username"], '.</b>';
+                };
             ?>
 
         </div>

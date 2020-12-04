@@ -13,6 +13,10 @@
 <?php
   $conn = mysqli_connect("localhost", "root", "", "blogdb");
 
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
   $sql = "SELECT * FROM post;";
   $result = mysqli_query($conn, $sql);
   $resultCheck = mysqli_num_rows($result);
@@ -22,15 +26,16 @@
       echo "<div class = article>";
       echo $row['title'] . "<br>";
       echo $row['content'] . "<br>";
+      echo "<a href='edit.php?id=". $row['id'] ."' class='btn btn-primary'>Edit</a>";
+      echo "<button type='submit' name='remove_post' class='btn btn-primary'>Remove</button>";
       echo "</div>";
     }
   }
 
 
 
+
 ?>
-
-
 
 
 <?php
