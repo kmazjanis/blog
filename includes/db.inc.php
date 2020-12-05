@@ -1,32 +1,20 @@
 <?php
 
+    $db_path = 'localhost' ;
+    $db_username = 'root';
+    $db_pass = '';
+    $db_name = 'blogdb';
+    
+    $conn = mysqli_connect($db_path, $db_username, $db_pass, $db_name);
 
-    $conn = mysqli_connect("localhost", "root", "", "blogdb");
 
-
-    if(!$conn){
-        die("connection failed: " . mysqli_connect_error());
+   
+    if(mysqli_connect_errno()){
+        echo "Failed to connect to db";
+        exit();
     }
-    else {
-        echo "connection gut";
-    }
-    // if(mysqli_connect_errno()){
-    //     echo "Failed to connect";
-    //     exit();
-    // }
-    // echo "Connection succesfull";
+    echo "Connection succesfull";
 
-    // $sql = "INSERT INTO post (title, seo_title, content, author)
-    // VALUES ('$title', '$seo_title', '$content', '$author')";
-    // mysqli_query($conn, $sql);
-    //header('Location: http://localhost:8080/');
-    //exit();
-
-    // if(mysqli_connect_errno()){
-    //     echo "Failed to connect";
-    //     exit();
-    // }
-    // echo "Connection succesfull";
 
     // $dsn = 'mysql:dbname=blogdb;host=localhost';
     // try{

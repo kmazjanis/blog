@@ -53,14 +53,14 @@
            
             
             <form method="POST">
-              <input type="text" name="id" value="<?php echo $q['id'];?>">
+              <input hidden type="text" name="id" value="<?php echo $q['id'];?>">
               <input name="title" type="text" class="form-control" id="formGroupExampleInput" value="<?php echo $q['title'];?>">
               <input name="seo_title" type="text" class="form-control" id="formGroupExampleInput" value="<?php echo $q['seo_title'];?>">
               <textarea name="content" class="form-control"> <?php echo $q['content'];?> 
               </textarea>
             
               <button name="update_post" class="btn btn-dark">update</button>
-              <button name="delete" class="btn btn-danger btn-sm ml-2">delete</button>
+              <button name="delete" class="btn btn-danger">delete</button>
             </form>
 
             

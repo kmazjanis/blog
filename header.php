@@ -16,31 +16,25 @@ session_start()
     <body>
     <div>
 
-    <?php
-        
-    ?>
+ 
 
     </div>
         <script src="" async defer></script>
         <div class="admin_header"> 
             <a href="index.php">Home</a>
-            <?php
-                if(isset($_SESSION['userid'])){
-                    echo "<a href='profile.php'>Profile page </a>";
-                    echo "<a href='includes/logout.inc.php'>Log Out </a>";
-                    echo "<a href='insert_post.php'>Insert Post </a>";
-                }
-                else {
-                    echo "<a href='signup.php'>Sign Up!</a>";
-                    echo "<a href='login.php'> Login </a>";
-                }
-
-                if(!isset($_SESSION["username"])){
-                    echo 'not loged in';
-                } else{
-                    echo 'hi <b>', $_SESSION["username"], '.</b>';
-                };
-            ?>
+            <?php if(isset($_SESSION['userid'])){ ?>
+                    <a href='includes/logout.inc.php'>Log Out </a>
+                    <a href='insert_post.php'>Insert Post </a>
+                <?php } else {?>
+                    <a href='signup.php'>Sign Up!</a>
+                    <a href='login.php'> Login </a>
+                <?php } ?>
+                    
+               <?php if(isset($_SESSION['username'])){ ?>
+                    <span>Hi </span><b><?php echo $_SESSION["username"]; ?></b>
+                <?php } else { ?>
+                     <span>Not logged in</span>
+                <?php }; ?>
 
         </div>
         
