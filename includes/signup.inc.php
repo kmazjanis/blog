@@ -1,16 +1,16 @@
 <?php
 
-if (isset($_POST["submit"])){
-    $name =  $_POST["name"];
-    $email =  $_POST["email"];
-    $username =  $_POST["username"];
-    $pass =  $_POST["pass"];
-    $passrepeat =  $_POST["passrepeat"];
+if (isset($_POST["submit"])) {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $username = $_POST["username"];
+    $pass = $_POST["pass"];
+    $passrepeat = $_POST["passrepeat"];
 
     require_once "db.inc.php";
     require_once "functions.inc.php";
 
-    if(mysqli_connect_errno()){
+    if (mysqli_connect_errno()) {
         echo "Failed to connect";
         exit();
     }
@@ -48,8 +48,7 @@ if (isset($_POST["submit"])){
 
     createUser($conn, $name, $email, $username, $pass);
 
-}
-else {
+} else {
     header("location: ../signup.php");
     exit();
-}  
+}

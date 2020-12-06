@@ -4,18 +4,13 @@
  <section class="signup-form">
 
  <?php
-   if(!isset($_SESSION["username"])){
-    echo "not loged in";
-    header("location: ../login.php");
-    exit();
-} else{
-    echo "all gut";
-};
+  require_once "includes/db.inc.php";
+  require_once "includes/functions.inc.php";
+  checkIfLoggedIn();
 ?>
 
 <?php
-      require_once "includes/db.inc.php";
-      require_once "includes/functions.inc.php";
+      
 //get id
       if(isset($_REQUEST['id'])){
         $id = $_REQUEST['id'];
@@ -24,7 +19,7 @@
       }
 
 
-      //edit post
+  //    edit post
       if(isset($_REQUEST['update_post'])){
         $id = $_REQUEST['id'];
         $title = $_REQUEST['title'];
@@ -50,7 +45,6 @@
 <h2>Edit POST</h2>
       <div class="form-group">
       <?php foreach($query as $q){?>
-           
             
             <form method="POST">
               <input hidden type="text" name="id" value="<?php echo $q['id'];?>">

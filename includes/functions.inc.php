@@ -149,3 +149,11 @@ function loginUser($conn, $username, $pass)
         header("location: ../index.php");
     }
 }
+
+function checkIfLoggedIn(){
+    if(!isset($_SESSION["username"])){
+        echo "not loged in";
+        header("location: ../login.php");
+        exit();
+    } else{ };
+}

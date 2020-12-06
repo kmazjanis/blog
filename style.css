@@ -27,4 +27,5 @@ p{
 .article{
     background-color: darkcyan;
     margin: 10px;
+    padding: 5px 5px 5px 15px;
 }
